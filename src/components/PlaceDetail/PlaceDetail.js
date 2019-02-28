@@ -1,7 +1,15 @@
 import React from "react";
-import { Modal, View, Image, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  Modal,
+  View,
+  Image,
+  Text,
+  Button,
+  StyleSheet,
+  TouchableOpacity
+} from "react-native";
 
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from "react-native-vector-icons/Ionicons";
 
 const placeDetail = props => {
   let modalContent = null;
@@ -48,7 +56,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 28
   },
-  deleteButton:{
+  deleteButton: {
     alignItems: "center"
   }
 });
