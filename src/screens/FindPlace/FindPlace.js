@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import {
+  View
+} from "react-native";
 import { connect } from "react-redux";
-
 import PlaceList from "../../components/PlaceList/PlaceList";
 
 class FindPlaceScreen extends Component {
+  static navigatorStyle = {
+    navBarButtonColor: "orange"
+  };
+
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
@@ -33,13 +38,13 @@ class FindPlaceScreen extends Component {
     });
   };
 
-  render() {
+  render() {  
     return (
       <View>
         <PlaceList
-          places={this.props.places}
-          onItemSelected={this.itemSelectedHandler}
-        />
+            places={this.props.places}
+            onItemSelected={this.itemSelectedHandler}
+          />
       </View>
     );
   }
