@@ -15,15 +15,28 @@ import PlaceInput from "../../components/PlaceInput/PlaceInput";
 import MainText from "../../components/UI/MainText/MainText";
 import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import PickImage from "../../components/PickImage/PickImage";
-
+import validate from "../../utility/validation";
 
 class SharePlaceScreen extends Component {
   static navigatorStyle = {
     navBarButtonColor: "orange"
-  }
+  };
 
   state = {
-    placeName: ""
+    controls: {
+      placeName: {
+        value: "",
+        valid: false,
+        touched: false,
+        validationRules: {
+          notEmpty: true
+        }
+      },
+      image: {
+        value: null,
+        valid: false
+      }
+    }
   };
 
   constructor(props) {
@@ -42,15 +55,40 @@ class SharePlaceScreen extends Component {
   };
 
   placeNameChangedHandler = val => {
-    this.setState({
-      placeName: val
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          placeName: {
+            ...prevState.controls.placeName,
+            value: val,
+            valid: validate(val, prevState.controls.placeName.validationRules),
+            touched: true
+          }
+        }
+      };
     });
   };
 
+  imagePickedHandler = image => {
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          image: {
+            value: image,
+            valid: true
+          }
+        }
+      };
+    });
+  }
+
   placeAddedHandler = () => {
-    if (this.state.placeName.trim() !== "") {
-      this.props.onAddPlace(this.state.placeName);
-    }
+    this.props.onAddPlace(
+      this.state.controls.placeName.value,
+      this.state.controls.image.value
+    );
   };
 
   render() {
@@ -58,15 +96,23 @@ class SharePlaceScreen extends Component {
       <ScrollView>
         <View style={styles.container}>
           <MainText>
-            <HeadingText>create question</HeadingText>
+          <HeadingText>create question</HeadingText>
           </MainText>
-          <PickImage />
+          <PickImage onImagePicked={this.imagePickedHandler} />
+          
           <PlaceInput
-            placeName={this.state.placeName}
+            placeData={this.state.controls.placeName}
             onChangeText={this.placeNameChangedHandler}
           />
           <View style={styles.button}>
-            <Button title="Share the Place!" onPress={this.placeAddedHandler} />
+            <Button
+              title="create question"
+              onPress={this.placeAddedHandler}
+              disabled={
+                !this.state.controls.placeName.valid ||
+                !this.state.controls.image.valid
+              }
+            />
           </View>
         </View>
       </ScrollView>
@@ -97,7 +143,7 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddPlace: placeName => dispatch(addPlace(placeName))
+    onAddPlace: (placeName, image) => dispatch(addPlace(placeName, image))
   };
 };
 
