@@ -12,9 +12,9 @@ import {
 import { connect } from "react-redux";
 
 import Icon from "react-native-vector-icons/Ionicons";
-import { deletePlace } from "../../store/actions/index";
+import { deleteQuestion } from "../../store/actions/index";
 
-class PlaceDetail extends Component {
+class QuestionDetail extends Component {
   state = {
     viewMode: "portrait"
   };
@@ -34,8 +34,8 @@ class PlaceDetail extends Component {
     });
   };
 
-  placeDeletedHandler = () => {
-    this.props.onDeletePlace(this.props.selectedPlace.key);
+  questionDeletedHandler = () => {
+    this.props.onDeleteQuestion(this.props.selectedQuestion.key);
     this.props.navigator.pop();
   };
 
@@ -51,18 +51,18 @@ class PlaceDetail extends Component {
       >
         <View style={styles.subContainer}>
           <Image
-            source={this.props.selectedPlace.image}
-            style={styles.placeImage}
+            source={this.props.selectedQuestion.image}
+            style={styles.questionImage}
           />
         </View>
         <View style={styles.subContainer}>
           <View>
-            <Text style={styles.placeName}>
-              {this.props.selectedPlace.name}
+            <Text style={styles.questionName}>
+              {this.props.selectedQuestion.name}
             </Text>
           </View>
           <View>
-            <TouchableOpacity onPress={this.placeDeletedHandler}>
+            <TouchableOpacity onPress={this.questionDeletedHandler}>
               <View style={styles.deleteButton}>
                 <Icon
                   size={30}
@@ -89,11 +89,11 @@ const styles = StyleSheet.create({
   landscapeContainer: {
     flexDirection: "row"
   },
-  placeImage: {
+  questionImage: {
     width: "100%",
     height: 200
   },
-  placeName: {
+  questionName: {
     fontWeight: "bold",
     textAlign: "center",
     fontSize: 28
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onDeletePlace: key => dispatch(deletePlace(key))
+    onDeleteQuestion: key => dispatch(deleteQuestion(key))
   };
 };
 
-export default connect(null, mapDispatchToProps)(PlaceDetail);
+export default connect(null, mapDispatchToProps)(QuestionDetail);

@@ -1,2 +1,2 @@
-export const ADD_PLACE = 'ADD_PLACE';
-export const DELETE_PLACE = 'DELETE_PLACE';
+export const ADD_QUESTION = 'ADD_QUESTION';
+export const DELETE_QUESTION = 'DELETE_QUESTION';

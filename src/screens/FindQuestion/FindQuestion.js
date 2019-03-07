@@ -3,9 +3,9 @@ import {
   View
 } from "react-native";
 import { connect } from "react-redux";
-import PlaceList from "../../components/PlaceList/PlaceList";
+import QuestionList from "../../components/QuestionList/QuestionList";
 
-class FindPlaceScreen extends Component {
+class FindQuestionScreen extends Component {
   static navigatorStyle = {
     navBarButtonColor: "orange"
   };
@@ -26,14 +26,14 @@ class FindPlaceScreen extends Component {
   };
 
   itemSelectedHandler = key => {
-    const selPlace = this.props.places.find(place => {
-      return place.key === key;
+    const selQuestion = this.props.questions.find(question => {
+      return question.key === key;
     });
     this.props.navigator.push({
-      screen: "awesome-places.PlaceDetailScreen",
-      title: selPlace.name,
+      screen: "awesome-questions.QuestionDetailScreen",
+      title: selQuestion.name,
       passProps: {
-        selectedPlace: selPlace
+        selectedQuestion: selQuestion
       }
     });
   };
@@ -41,8 +41,8 @@ class FindPlaceScreen extends Component {
   render() {  
     return (
       <View>
-        <PlaceList
-            places={this.props.places}
+        <QuestionList
+            questions={this.props.questions}
             onItemSelected={this.itemSelectedHandler}
           />
       </View>
@@ -52,8 +52,8 @@ class FindPlaceScreen extends Component {
 
 const mapStateToProps = state => {
   return {
-    places: state.places.places
+    questions: state.questions.questions
   };
 };
 
-export default connect(mapStateToProps)(FindPlaceScreen);
+export default connect(mapStateToProps)(FindQuestionScreen);

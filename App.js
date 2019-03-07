@@ -2,9 +2,9 @@ import { Navigation } from "react-native-navigation";
 import { Provider } from "react-redux";
 
 import AuthScreen from "./src/screens/Auth/Auth";
-import SharePlaceScreen from "./src/screens/SharePlace/SharePlace";
-import FindPlaceScreen from "./src/screens/FindPlace/FindPlace";
-import PlaceDetailScreen from "./src/screens/PlaceDetail/PlaceDetail";
+import ShareQuestionScreen from "./src/screens/ShareQuestion/ShareQuestion";
+import FindQuestionScreen from "./src/screens/FindQuestion/FindQuestion";
+import QuestionDetailScreen from "./src/screens/QuestionDetail/QuestionDetail";
 import SideDrawer from "./src/screens/SideDrawer/SideDrawer";
 import configureStore from "./src/store/configureStore";
 
@@ -12,38 +12,38 @@ const store = configureStore();
 
 // Register Screens
 Navigation.registerComponent(
-  "awesome-places.AuthScreen",
+  "awesome-questions.AuthScreen",
   () => AuthScreen,
   store,
   Provider
 );
 Navigation.registerComponent(
-  "awesome-places.SharePlaceScreen",
-  () => SharePlaceScreen,
+  "awesome-questions.ShareQuestionScreen",
+  () => ShareQuestionScreen,
   store,
   Provider
 );
 Navigation.registerComponent(
-  "awesome-places.FindPlaceScreen",
-  () => FindPlaceScreen,
+  "awesome-questions.FindQuestionScreen",
+  () => FindQuestionScreen,
   store,
   Provider
 );
 Navigation.registerComponent(
-  "awesome-places.PlaceDetailScreen",
-  () => PlaceDetailScreen,
+  "awesome-questions.QuestionDetailScreen",
+  () => QuestionDetailScreen,
   store,
   Provider
 );
 Navigation.registerComponent(
-  "awesome-places.SideDrawer",
+  "awesome-questions.SideDrawer",
   () => SideDrawer
 );
 
 // Start a App
 export default () => Navigation.startSingleScreenApp({
   screen: {
-    screen: "awesome-places.AuthScreen",
+    screen: "awesome-questions.AuthScreen",
     title: "Login"
   }
 });

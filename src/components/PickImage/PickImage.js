@@ -25,7 +25,7 @@ class PickImage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.placeholder}>
+        <View style={styles.questionholder}>
           <Image source={this.state.pickedImaged} style={styles.previewImage} />
         </View>
         <View style={styles.button}>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         width: "100%",
         alignItems: "center"
     },
-    placeholder: {
+    questionholder: {
       borderWidth: 1,
       borderColor: "black",
       backgroundColor: "#eee",

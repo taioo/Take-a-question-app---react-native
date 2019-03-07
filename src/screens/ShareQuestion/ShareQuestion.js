@@ -10,21 +10,21 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 
-import { addPlace } from "../../store/actions/index";
-import PlaceInput from "../../components/PlaceInput/PlaceInput";
+import { addQuestion } from "../../store/actions/index";
+import QuestionInput from "../../components/QuestionInput/QuestionInput";
 import MainText from "../../components/UI/MainText/MainText";
 import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import PickImage from "../../components/PickImage/PickImage";
 import validate from "../../utility/validation";
 
-class SharePlaceScreen extends Component {
+class ShareQuestionScreen extends Component {
   static navigatorStyle = {
     navBarButtonColor: "orange"
   };
 
   state = {
     controls: {
-      placeName: {
+      questionName: {
         value: "",
         valid: false,
         touched: false,
@@ -54,15 +54,15 @@ class SharePlaceScreen extends Component {
     }
   };
 
-  placeNameChangedHandler = val => {
+  questionNameChangedHandler = val => {
     this.setState(prevState => {
       return {
         controls: {
           ...prevState.controls,
-          placeName: {
-            ...prevState.controls.placeName,
+          questionName: {
+            ...prevState.controls.questionName,
             value: val,
-            valid: validate(val, prevState.controls.placeName.validationRules),
+            valid: validate(val, prevState.controls.questionName.validationRules),
             touched: true
           }
         }
@@ -84,9 +84,9 @@ class SharePlaceScreen extends Component {
     });
   }
 
-  placeAddedHandler = () => {
-    this.props.onAddPlace(
-      this.state.controls.placeName.value,
+  questionAddedHandler = () => {
+    this.props.onAddQuestion(
+      this.state.controls.questionName.value,
       this.state.controls.image.value
     );
   };
@@ -100,16 +100,16 @@ class SharePlaceScreen extends Component {
           </MainText>
           <PickImage onImagePicked={this.imagePickedHandler} />
           
-          <PlaceInput
-            placeData={this.state.controls.placeName}
-            onChangeText={this.placeNameChangedHandler}
+          <QuestionInput
+            questionData={this.state.controls.questionName}
+            onChangeText={this.questionNameChangedHandler}
           />
           <View style={styles.button}>
             <Button
               title="create question"
-              onPress={this.placeAddedHandler}
+              onPress={this.questionAddedHandler}
               disabled={
-                !this.state.controls.placeName.valid ||
+                !this.state.controls.questionName.valid ||
                 !this.state.controls.image.valid
               }
             />
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center"
   },
-  placeholder: {
+  questionholder: {
     borderWidth: 1,
     borderColor: "black",
     backgroundColor: "#eee",
@@ -143,8 +143,8 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddPlace: (placeName, image) => dispatch(addPlace(placeName, image))
+    onAddQuestion: (questionName, image) => dispatch(addQuestion(questionName, image))
   };
 };
 
-export default connect(null, mapDispatchToProps)(SharePlaceScreen);
+export default connect(null, mapDispatchToProps)(ShareQuestionScreen);
