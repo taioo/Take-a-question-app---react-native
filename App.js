@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import AuthScreen from "./src/screens/Auth/Auth";
 import ShareQuestionScreen from "./src/screens/ShareQuestion/ShareQuestion";
 import FindQuestionScreen from "./src/screens/FindQuestion/FindQuestion";
+import FindQuestionViewScreen from "./src/screens/FindQuestion/FindQuestionView";
 import QuestionDetailScreen from "./src/screens/QuestionDetail/QuestionDetail";
 import SideDrawer from "./src/screens/SideDrawer/SideDrawer";
 import configureStore from "./src/store/configureStore";
@@ -29,6 +30,14 @@ Navigation.registerComponent(
   store,
   Provider
 );
+
+Navigation.registerComponent(
+  "awesome-questions.FindQuestionViewScreen",
+  () => FindQuestionViewScreen,
+  store,
+  Provider
+);
+
 Navigation.registerComponent(
   "awesome-questions.QuestionDetailScreen",
   () => QuestionDetailScreen,

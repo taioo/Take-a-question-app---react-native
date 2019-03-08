@@ -11,6 +11,21 @@ const startTabs = () => {
         Navigation.startTabBasedApp({
             tabs: [
                 {
+                    screen: "awesome-questions.FindQuestionViewScreen",
+                    label: "View Question",
+                    title: "View Question",
+                    icon: sources[0],
+                    navigatorButtons: {
+                        leftButtons: [
+                            {
+                                icon: sources[2],
+                                title: "Menu",
+                                id: "sideDrawerToggle"
+                            }
+                        ]
+                    }
+                },
+                {
                     screen: "awesome-questions.FindQuestionScreen",
                     label: "Find Question",
                     title: "Find Question",

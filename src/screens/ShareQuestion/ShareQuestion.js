@@ -32,6 +32,22 @@ class ShareQuestionScreen extends Component {
           notEmpty: true
         }
       },
+      questionAge: {
+        value: "",
+        valid: false,
+        touched: false,
+        validationRules: {
+          notEmpty: true
+        }
+      },
+      questionText: {
+        value: "",
+        valid: false,
+        touched: false,
+        validationRules: {
+          notEmpty: true
+        }
+      },
       image: {
         value: null,
         valid: false
@@ -70,6 +86,38 @@ class ShareQuestionScreen extends Component {
     });
   };
 
+  questionAgeChangedHandler = val => {
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          questionAge: {
+            ...prevState.controls.questionAge,
+            value: val,
+            valid: validate(val, prevState.controls.questionAge.validationRules),
+            touched: true
+          }
+        }
+      };
+    });
+  };
+
+  questionTextChangedHandler = val => {
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          questionText: {
+            ...prevState.controls.questionText,
+            value: val,
+            valid: validate(val, prevState.controls.questionText.validationRules),
+            touched: true
+          }
+        }
+      };
+    });
+  };
+
   imagePickedHandler = image => {
     this.setState(prevState => {
       return {
@@ -87,6 +135,8 @@ class ShareQuestionScreen extends Component {
   questionAddedHandler = () => {
     this.props.onAddQuestion(
       this.state.controls.questionName.value,
+      this.state.controls.questionAge.value,
+      this.state.controls.questionText.value,
       this.state.controls.image.value
     );
   };
@@ -96,13 +146,21 @@ class ShareQuestionScreen extends Component {
       <ScrollView>
         <View style={styles.container}>
           <MainText>
-          <HeadingText>create question</HeadingText>
+            <HeadingText>create question</HeadingText>
           </MainText>
           <PickImage onImagePicked={this.imagePickedHandler} />
-          
+
           <QuestionInput
             questionData={this.state.controls.questionName}
             onChangeText={this.questionNameChangedHandler}
+          />
+          <QuestionInput
+            questionData={this.state.controls.questionAge}
+            onChangeText={this.questionAgeChangedHandler}
+          />
+          <QuestionInput
+            questionData={this.state.controls.questionText}
+            onChangeText={this.questionTextChangedHandler}
           />
           <View style={styles.button}>
             <Button
@@ -110,6 +168,8 @@ class ShareQuestionScreen extends Component {
               onPress={this.questionAddedHandler}
               disabled={
                 !this.state.controls.questionName.valid ||
+                !this.state.controls.questionAge.valid ||
+                !this.state.controls.questionText.valid ||
                 !this.state.controls.image.valid
               }
             />
@@ -143,7 +203,7 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddQuestion: (questionName, image) => dispatch(addQuestion(questionName, image))
+    onAddQuestion: (questionName, questionAge, questionText, image) => dispatch(addQuestion(questionName, questionAge, questionText, image))
   };
 };
 

@@ -15,6 +15,8 @@ const reducer = (state = initialState, action) => {
         questions: state.questions.concat({
           key: Math.random(),
           name: action.questionName,
+          age: action.questionAge,
+          text: action.questionText,
           image: {
             uri: action.image.uri
           }

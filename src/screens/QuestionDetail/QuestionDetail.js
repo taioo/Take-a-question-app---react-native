@@ -59,6 +59,8 @@ class QuestionDetail extends Component {
           <View>
             <Text style={styles.questionName}>
               {this.props.selectedQuestion.name}
+              {this.props.selectedQuestion.age}
+              {this.props.selectedQuestion.text}
             </Text>
           </View>
           <View>

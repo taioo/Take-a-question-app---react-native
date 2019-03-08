@@ -1,19 +1,18 @@
 import React from "react";
 import { StyleSheet, FlatList } from "react-native";
 
-import ListItem from "../ListItem/ListItem";
+import ListItem from "../ListItem/ListItemView";
 
 const questionList = props => {
   return (
     <FlatList
-      style={styles.listContainer}
       data={props.questions}
       renderItem={(info) => (
         <ListItem
           questionName={info.item.name}
           questionAge={info.item.age}
+          questionText={info.item.text}
           questionImage={info.item.image}
-          onItemPressed={() => props.onItemSelected(info.item.key)}
         />
       )}
     />
