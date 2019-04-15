@@ -7,7 +7,6 @@ const questionInput = props => (
   <DefaultInput
     value={props.questionData.value}
     valid={props.questionData.valid}
-    touched={props.questionData.touched}
     onChangeText={props.onChangeText}
   />
 );

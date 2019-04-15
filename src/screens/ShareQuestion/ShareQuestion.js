@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import {
   View,
   Text,
-  TextInput,
   Button,
   StyleSheet,
   ScrollView,
-  Image
 } from "react-native";
 import { connect } from "react-redux";
 
@@ -27,7 +25,6 @@ class ShareQuestionScreen extends Component {
       questionName: {
         value: "",
         valid: false,
-        touched: false,
         validationRules: {
           notEmpty: true
         }
@@ -35,7 +32,6 @@ class ShareQuestionScreen extends Component {
       questionAge: {
         value: "",
         valid: false,
-        touched: false,
         validationRules: {
           notEmpty: true
         }
@@ -43,7 +39,6 @@ class ShareQuestionScreen extends Component {
       questionText: {
         value: "",
         valid: false,
-        touched: false,
         validationRules: {
           notEmpty: true
         }
@@ -79,7 +74,6 @@ class ShareQuestionScreen extends Component {
             ...prevState.controls.questionName,
             value: val,
             valid: validate(val, prevState.controls.questionName.validationRules),
-            touched: true
           }
         }
       };
@@ -95,7 +89,6 @@ class ShareQuestionScreen extends Component {
             ...prevState.controls.questionAge,
             value: val,
             valid: validate(val, prevState.controls.questionAge.validationRules),
-            touched: true
           }
         }
       };
@@ -111,7 +104,6 @@ class ShareQuestionScreen extends Component {
             ...prevState.controls.questionText,
             value: val,
             valid: validate(val, prevState.controls.questionText.validationRules),
-            touched: true
           }
         }
       };
