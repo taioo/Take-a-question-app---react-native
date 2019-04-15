@@ -5,7 +5,6 @@ import DefaultInput from "../UI/DefaultInput/DefaultInput";
 
 const questionInput = props => (
   <DefaultInput
-    questionholder="Question Name"
     value={props.questionData.value}
     valid={props.questionData.valid}
     touched={props.questionData.touched}

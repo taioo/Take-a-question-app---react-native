@@ -150,14 +150,25 @@ class ShareQuestionScreen extends Component {
           </MainText>
           <PickImage onImagePicked={this.imagePickedHandler} />
 
+
+          <Text style={{ color: 'black' }}>
+            name:
+          </Text>
+
           <QuestionInput
             questionData={this.state.controls.questionName}
             onChangeText={this.questionNameChangedHandler}
           />
+          <Text style={{ color: 'black' }}>
+            Age:
+          </Text>
           <QuestionInput
             questionData={this.state.controls.questionAge}
             onChangeText={this.questionAgeChangedHandler}
           />
+          <Text style={{ color: 'black' }}>
+            Question:
+          </Text>
           <QuestionInput
             questionData={this.state.controls.questionText}
             onChangeText={this.questionTextChangedHandler}
@@ -185,19 +196,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center"
   },
-  questionholder: {
-    borderWidth: 1,
-    borderColor: "black",
-    backgroundColor: "#eee",
-    width: "80%",
-    height: 150
-  },
   button: {
     margin: 8
-  },
-  previewImage: {
-    width: "100%",
-    height: "100%"
   }
 });
 

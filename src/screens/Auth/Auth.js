@@ -18,18 +18,6 @@ class AuthScreen extends Component {
 
   constructor(props) {
     super(props);
-    Dimensions.addEventListener("change", this.updateStyles);
-  }
-
-  componentWillUnmount() {
-    Dimensions.removeEventListener("change", this.updateStyles);
-  }
-
-  updateStyles = (dims) => {
-    this.setState({
-      viewMode:
-        dims.window.height > 500 ? "portrait" : "landscape"
-    });
   }
 
   loginHandler = () => {
@@ -40,10 +28,12 @@ class AuthScreen extends Component {
     return (
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
         <View style={styles.container}>
-        <HeadingText>Please Log In</HeadingText>
+          <HeadingText>Please Log In</HeadingText>
+          {console.log('start Button  '+ Date.now())}
           <ButtonWithBackground color="#29aaf4" onPress={(this.loginHandler)}>
-           Login
+            Login
           </ButtonWithBackground>
+          {console.log('end   Button  '+ Date.now())}
         </View>
       </ImageBackground>
     );

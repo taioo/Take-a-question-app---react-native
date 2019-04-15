@@ -28,9 +28,11 @@ class FindQuestionViewScreen extends Component {
   render() {  
     return (
       <View>
+        {console.log('start Flat List  '+ Date.now())}
         <QuestionList
             questions={this.props.questions}
           />
+        {console.log('end   Flat List  '+ Date.now())}
       </View>
     );
   }

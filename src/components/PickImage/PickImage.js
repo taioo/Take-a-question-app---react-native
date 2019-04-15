@@ -8,7 +8,7 @@ class PickImage extends Component {
   }
 
   pickImageHandler = () => {
-    ImagePicker.showImagePicker({title: "Pick an Image"}, res => {
+    ImagePicker.showImagePicker({ title: "Pick an Image" }, res => {
       if (res.didCancel) {
         console.log("User cancelled!");
       } else if (res.error) {
@@ -17,7 +17,7 @@ class PickImage extends Component {
         this.setState({
           pickedImaged: { uri: res.uri }
         });
-        this.props.onImagePicked({uri: res.uri, base64: res.data});
+        this.props.onImagePicked({ uri: res.uri, base64: res.data });
       }
     });
   }
@@ -26,7 +26,9 @@ class PickImage extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.questionholder}>
+          {console.log('start imgLoading  ' + Date.now())}
           <Image source={this.state.pickedImaged} style={styles.previewImage} />
+          {console.log('end   imgLoading  ' + Date.now())}
         </View>
         <View style={styles.button}>
           <Button title="Choose Image" onPress={this.pickImageHandler} />
@@ -37,24 +39,25 @@ class PickImage extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        width: "100%",
-        alignItems: "center"
-    },
-    questionholder: {
-      borderWidth: 1,
-      borderColor: "black",
-      backgroundColor: "#eee",
-      width: "80%",
-      height: 150
-    },
-    button: {
-      margin: 8
-    },
-    previewImage: {
-        width: "100%",
-        height: "100%"
-    }
-  });
+  container: {
+    width: "100%",
+    height: "100%",
+    alignItems: "center"
+  },
+  questionholder: {
+    borderWidth: 1,
+    borderColor: "black",
+    backgroundColor: "#eee",
+    width: "80%",
+    height: "80%"
+  },
+  button: {
+    margin: 8
+  },
+  previewImage: {
+    width: "100%",
+    height: "100%"
+  }
+});
 
 export default PickImage;

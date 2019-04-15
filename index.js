@@ -6,10 +6,24 @@ import configureStore from './src/store/configureStore';
 
 const store = configureStore();
 
-const RNRedux = () => (
-    <Provider store={store}>
-        <App />
-    </Provider>
-);
+export default class RNRedux extends React.Component {
+    constructor(props) {
+        super(props)
+        console.log(Date.now())
+    }
 
-AppRegistry.registerComponent('myApp', () => RNRedux);
+    render() {
+        return (
+            <Provider store={store}>
+                <App />
+            </Provider>);
+    }
+}
+
+// const RNRedux = () => (
+//     <Provider store={store}>
+//         <App />
+//     </Provider>
+// );
+
+AppRegistry.registerComponent('myApp', () => new RNRedux());
