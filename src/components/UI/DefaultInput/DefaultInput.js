@@ -1,13 +1,47 @@
-import React from "react";
+import React, { Component } from "react";
 import { TextInput, StyleSheet } from "react-native";
 
-const defaultInput = props => (
-  <TextInput
-    underlineColorAndroid="transparent"
-    {...props}
+class DefaultInput extends Component {
+
+
+  state = {
+    
+    start:'0',
+    end:'0'
+};
+
+
+
+
+
+  constructor(props) {
+    super(props);
+    this.state.start=Date.now();
+  }
+
+
+  componentDidMount() {
+    this.state.end=Date.now();
+    console.log('%c######## RENDER time DefaultInput: ','background: red',(this.state.end-this.state.start));
+  }
+
+
+
+
+  render() {
+    return (
+      <TextInput underlineColorAndroid="transparent"
+    {...this.props}
     style={styles.input}
   />
-);
+    );
+
+  }
+
+}
+
+
+
 
 const styles = StyleSheet.create({
   input: {
@@ -20,4 +54,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default defaultInput;
+export default DefaultInput;

@@ -25,23 +25,17 @@ class ShareQuestionScreen extends Component {
       questionName: {
         value: "",
         valid: false,
-        validationRules: {
-          notEmpty: true
-        }
+
       },
       questionAge: {
         value: "",
         valid: false,
-        validationRules: {
-          notEmpty: true
-        }
+
       },
       questionText: {
         value: "",
         valid: false,
-        validationRules: {
-          notEmpty: true
-        }
+
       },
       image: {
         value: null,
@@ -138,7 +132,7 @@ class ShareQuestionScreen extends Component {
       <ScrollView>
         <View style={styles.container}>
           <MainText>
-            <HeadingText>create question</HeadingText>
+            <HeadingText>Create a Question</HeadingText>
           </MainText>
           <PickImage onImagePicked={this.imagePickedHandler} />
 

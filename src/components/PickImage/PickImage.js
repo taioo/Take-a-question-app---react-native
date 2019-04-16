@@ -4,20 +4,31 @@ import ImagePicker from "react-native-image-picker";
 
 class PickImage extends Component {
   state = {
-    pickedImaged: null
+    pickedImaged: null,
   }
 
+  componentDidMount() {
+    
+  }
+
+
+
+
   pickImageHandler = () => {
+    
     ImagePicker.showImagePicker({ title: "Pick an Image" }, res => {
       if (res.didCancel) {
         console.log("User cancelled!");
       } else if (res.error) {
         console.log("Error", res.error);
       } else {
+        start = Date.now();
         this.setState({
-          pickedImaged: { uri: res.uri }
+          pickedImaged: { uri: res.uri },
         });
         this.props.onImagePicked({ uri: res.uri, base64: res.data });
+        end = Date.now();
+        console.log('%c######## LOAD time PickImg: ','background: red',(end-start));
       }
     });
   }
@@ -26,9 +37,7 @@ class PickImage extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.questionholder}>
-          {console.log('start imgLoading  ' + Date.now())}
           <Image source={this.state.pickedImaged} style={styles.previewImage} />
-          {console.log('end   imgLoading  ' + Date.now())}
         </View>
         <View style={styles.button}>
           <Button title="Choose Image" onPress={this.pickImageHandler} />

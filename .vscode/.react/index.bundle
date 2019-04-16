@@ -102605,9 +102605,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       key: "componentDidMount",
       value: function componentDidMount() {
         this.state.end = Date.now();
-        {
-          console.log('render time ButtonWithBackground: ' + (this.state.end - this.state.start));
-        }
+        console.log('%c######## RENDER time ButtonWithBackground:', 'background: red', this.state.end - this.state.start);
       }
     }, {
       key: "render",
@@ -102742,24 +102740,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         controls: {
           questionName: {
             value: "",
-            valid: false,
-            validationRules: {
-              notEmpty: true
-            }
+            valid: false
           },
           questionAge: {
             value: "",
-            valid: false,
-            validationRules: {
-              notEmpty: true
-            }
+            valid: false
           },
           questionText: {
             value: "",
-            valid: false,
-            validationRules: {
-              notEmpty: true
-            }
+            valid: false
           },
           image: {
             value: null,
@@ -102845,29 +102834,29 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         return _react.default.createElement(_reactNative.ScrollView, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 138
+            lineNumber: 132
           }
         }, _react.default.createElement(_reactNative.View, {
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 139
+            lineNumber: 133
           }
         }, _react.default.createElement(_MainText.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 140
+            lineNumber: 134
           }
         }, _react.default.createElement(_HeadingText.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 141
+            lineNumber: 135
           }
-        }, "create question")), _react.default.createElement(_PickImage.default, {
+        }, "Create a Question")), _react.default.createElement(_PickImage.default, {
           onImagePicked: this.imagePickedHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 143
+            lineNumber: 137
           }
         }), _react.default.createElement(_reactNative.Text, {
           style: {
@@ -102875,14 +102864,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 146
+            lineNumber: 140
           }
         }, "name:"), _react.default.createElement(_QuestionInput.default, {
           questionData: this.state.controls.questionName,
           onChangeText: this.questionNameChangedHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 150
+            lineNumber: 144
           }
         }), _react.default.createElement(_reactNative.Text, {
           style: {
@@ -102890,14 +102879,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 154
+            lineNumber: 148
           }
         }, "Age:"), _react.default.createElement(_QuestionInput.default, {
           questionData: this.state.controls.questionAge,
           onChangeText: this.questionAgeChangedHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 157
+            lineNumber: 151
           }
         }), _react.default.createElement(_reactNative.Text, {
           style: {
@@ -102905,20 +102894,20 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 161
+            lineNumber: 155
           }
         }, "Question:"), _react.default.createElement(_QuestionInput.default, {
           questionData: this.state.controls.questionText,
           onChangeText: this.questionTextChangedHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 164
+            lineNumber: 158
           }
         }), _react.default.createElement(_reactNative.View, {
           style: styles.button,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 168
+            lineNumber: 162
           }
         }, _react.default.createElement(_reactNative.Button, {
           title: "create question",
@@ -102926,7 +102915,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           disabled: !this.state.controls.questionName.valid || !this.state.controls.questionAge.valid || !this.state.controls.questionText.valid || !this.state.controls.image.valid,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 169
+            lineNumber: 163
           }
         }))));
       }
@@ -103055,30 +103044,91 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = void 0;
 
-  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/extends"));
 
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "react"));
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./../../../../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[10], "react-native");
 
   var _jsxFileName = "/Users/thaer/GitHub/app_react-native/src/components/UI/DefaultInput/DefaultInput.js";
-
-  var defaultInput = function defaultInput(props) {
-    return _react.default.createElement(_reactNative.TextInput, (0, _extends2.default)({
-      underlineColorAndroid: "transparent"
-    }, props, {
-      style: styles.input,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 5
-      }
-    }));
+  var _components = {
+    DefaultInput: {
+      displayName: "DefaultInput"
+    }
   };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/thaer/GitHub/app_react-native/src/components/UI/DefaultInput/DefaultInput.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var DefaultInput = function (_Component) {
+    (0, _inherits2.default)(DefaultInput, _Component);
+
+    function DefaultInput(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, DefaultInput);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(DefaultInput).call(this, props));
+      _this.state = {
+        start: '0',
+        end: '0'
+      };
+      _this.state.start = Date.now();
+      return _this;
+    }
+
+    (0, _createClass2.default)(DefaultInput, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.state.end = Date.now();
+        console.log('%c######## RENDER time DefaultInput: ', 'background: red', this.state.end - this.state.start);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.TextInput, (0, _extends2.default)({
+          underlineColorAndroid: "transparent"
+        }, this.props, {
+          style: styles.input,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33
+          }
+        }));
+      }
+    }]);
+    return DefaultInput;
+  }(_react.Component);
+
+  DefaultInput = _wrapComponent("DefaultInput")(DefaultInput);
 
   var styles = _reactNative.StyleSheet.create({
     input: {
@@ -103091,9 +103141,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
 
-  var _default = defaultInput;
-  exports.default = _default;
-},656,[1,9,20,26],"src/components/UI/DefaultInput/DefaultInput.js");
+  var _default2 = DefaultInput;
+  exports.default = _default2;
+},656,[1,565,9,12,13,14,17,18,20,203,26],"src/components/UI/DefaultInput/DefaultInput.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -103204,6 +103254,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           } else if (res.error) {
             console.log("Error", res.error);
           } else {
+            start = Date.now();
+
             _this.setState({
               pickedImaged: {
                 uri: res.uri
@@ -103214,6 +103266,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               uri: res.uri,
               base64: res.data
             });
+
+            end = Date.now();
+            console.log('%c######## LOAD time PickImg: ', 'background: red', end - start);
           }
         });
       };
@@ -103222,39 +103277,42 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
 
     (0, _createClass2.default)(PickImage, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {}
+    }, {
       key: "render",
       value: function render() {
         return _react.default.createElement(_reactNative.View, {
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 38
           }
         }, _react.default.createElement(_reactNative.View, {
           style: styles.questionholder,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 39
           }
-        }, console.log('start imgLoading  ' + Date.now()), _react.default.createElement(_reactNative.Image, {
+        }, _react.default.createElement(_reactNative.Image, {
           source: this.state.pickedImaged,
           style: styles.previewImage,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 40
           }
-        }), console.log('end   imgLoading  ' + Date.now())), _react.default.createElement(_reactNative.View, {
+        })), _react.default.createElement(_reactNative.View, {
           style: styles.button,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 42
           }
         }, _react.default.createElement(_reactNative.Button, {
           title: "Choose Image",
           onPress: this.pickImageHandler,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 43
           }
         })));
       }
@@ -103675,13 +103733,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             fileName: _jsxFileName,
             lineNumber: 30
           }
-        }, console.log('start Flat List  ' + Date.now()), _react.default.createElement(_QuestionListView.default, {
+        }, _react.default.createElement(_QuestionListView.default, {
           questions: this.props.questions,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
+            lineNumber: 31
           }
-        }), console.log('end   Flat List  ' + Date.now()));
+        }));
       }
     }]);
     return FindQuestionViewScreen;
@@ -103705,40 +103763,103 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = void 0;
 
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
 
-  var _ListItemView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../ListItem/ListItemView"));
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./../../../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+
+  var _ListItemView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "../ListItem/ListItemView"));
 
   var _jsxFileName = "/Users/thaer/GitHub/app_react-native/src/components/QuestionList/QuestionListView.js";
+  var _components = {
+    QuestionListView: {
+      displayName: "QuestionListView"
+    }
+  };
 
-  var questionList = function questionList(props) {
-    return _react.default.createElement(_reactNative.FlatList, {
-      data: props.questions,
-      renderItem: function renderItem(info) {
-        return _react.default.createElement(_ListItemView.default, {
-          questionName: info.item.name,
-          questionAge: info.item.age,
-          questionText: info.item.text,
-          questionImage: info.item.image,
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/thaer/GitHub/app_react-native/src/components/QuestionList/QuestionListView.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var QuestionListView = function (_Component) {
+    (0, _inherits2.default)(QuestionListView, _Component);
+
+    function QuestionListView(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, QuestionListView);
+      _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(QuestionListView).call(this, props));
+      _this.state = {
+        start: 0,
+        end: 0,
+        count: 0
+      };
+      _this.state.start = Date.now();
+      return _this;
+    }
+
+    (0, _createClass2.default)(QuestionListView, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.state.end = Date.now();
+        console.log('%c######## RENDER time FlatList: ', 'background: red', this.state.end - this.state.start);
+        this.state.count++;
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.FlatList, {
+          data: this.props.questions,
+          renderItem: function renderItem(info) {
+            return _react.default.createElement(_ListItemView.default, {
+              questionName: info.item.name,
+              questionAge: info.item.age,
+              questionText: info.item.text,
+              questionImage: info.item.image,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 32
+              }
+            });
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 11
+            lineNumber: 29
           }
         });
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8
       }
-    });
-  };
+    }]);
+    return QuestionListView;
+  }(_react.Component);
+
+  QuestionListView = _wrapComponent("QuestionListView")(QuestionListView);
 
   var styles = _reactNative.StyleSheet.create({
     listContainer: {
@@ -103746,9 +103867,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
 
-  var _default = questionList;
-  exports.default = _default;
-},665,[1,20,26,666],"src/components/QuestionList/QuestionListView.js");
+  var _default2 = QuestionListView;
+  exports.default = _default2;
+},665,[1,565,12,13,14,17,18,20,203,26,666],"src/components/QuestionList/QuestionListView.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 

@@ -3,7 +3,7 @@ import {
   View
 } from "react-native";
 import { connect } from "react-redux";
-import QuestionList from "../../components/QuestionList/QuestionListView";
+import QuestionListView from "../../components/QuestionList/QuestionListView";
 
 class FindQuestionViewScreen extends Component {
   static navigatorStyle = {
@@ -28,11 +28,7 @@ class FindQuestionViewScreen extends Component {
   render() {  
     return (
       <View>
-        {console.log('start Flat List  '+ Date.now())}
-        <QuestionList
-            questions={this.props.questions}
-          />
-        {console.log('end   Flat List  '+ Date.now())}
+        <QuestionListView questions={this.props.questions}/>
       </View>
     );
   }

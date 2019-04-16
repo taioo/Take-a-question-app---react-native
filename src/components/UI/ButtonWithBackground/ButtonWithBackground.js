@@ -28,7 +28,7 @@ class ButtonWithBackground extends Component {
 
   componentDidMount() {
     this.state.end=Date.now();
-    {console.log('render time ButtonWithBackground: '+(this.state.end-this.state.start))}
+    console.log('%c######## RENDER time ButtonWithBackground:','background: red',(this.state.end-this.state.start));
   }
 
 
