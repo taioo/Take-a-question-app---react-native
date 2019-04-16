@@ -12,6 +12,9 @@ const listItem = props => (
     borderRadius: 12,
     padding: 8,
     overflow: 'hidden',
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 28
   }}>{props.questionName}</Text>
   
     <Text style={{
@@ -21,6 +24,9 @@ const listItem = props => (
     borderRadius: 12,
     padding: 8,
     overflow: 'hidden',
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 28
   }}>{props.questionAge}</Text>
 
     <Text style={{
@@ -30,6 +36,9 @@ const listItem = props => (
     borderRadius: 12,
     padding: 8,
     overflow: 'hidden',
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 28
   }}>{props.questionText}</Text>
   
   </View>

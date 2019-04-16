@@ -58,9 +58,13 @@ class QuestionDetail extends Component {
         <View style={styles.subContainer}>
           <View>
             <Text style={styles.questionName}>
-              {this.props.selectedQuestion.name}
-              {this.props.selectedQuestion.age}
-              {this.props.selectedQuestion.text}
+              {'NAME: '+this.props.selectedQuestion.name}
+            </Text>
+            <Text style={styles.questionName}>
+              {'AGE: '+ this.props.selectedQuestion.age}
+            </Text>
+            <Text style={styles.questionName}>
+              {'QUESTION: '+this.props.selectedQuestion.text}
             </Text>
           </View>
           <View>

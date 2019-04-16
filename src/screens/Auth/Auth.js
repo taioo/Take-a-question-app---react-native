@@ -29,11 +29,9 @@ class AuthScreen extends Component {
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
         <View style={styles.container}>
           <HeadingText>Please Log In</HeadingText>
-          {console.log('start Button  '+ Date.now())}
           <ButtonWithBackground color="#29aaf4" onPress={(this.loginHandler)}>
             Login
           </ButtonWithBackground>
-          {console.log('end   Button  '+ Date.now())}
         </View>
       </ImageBackground>
     );
