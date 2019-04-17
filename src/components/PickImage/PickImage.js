@@ -46,7 +46,7 @@ class PickImage extends Component {
     );
   }
 }
-
+// todo android fix
 const styles = StyleSheet.create({
   container: {
     ...Platform.select({
