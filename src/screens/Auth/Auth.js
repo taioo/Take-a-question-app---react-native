@@ -11,6 +11,9 @@ import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import ButtonWithBackground from "../../components/UI/ButtonWithBackground/ButtonWithBackground";
 import backgroundImage from "../../assets/background.jpg";
 
+import {YellowBox} from 'react-native';
+YellowBox.ignoreWarnings(['Warning: ...']);
+
 class AuthScreen extends Component {
   state = {
     viewMode: Dimensions.get("window").height > 500 ? "portrait" : "landscape"

@@ -2,26 +2,37 @@ import React, { Component } from "react";
 import { StyleSheet, FlatList } from "react-native";
 
 import ListItem from "../ListItem/ListItemView";
+import backgroundImage from "../../assets/background.jpg";
 
 class QuestionListView extends Component {
 
 
   state = {
-    start:0,
-    end:0,
-    count:0
-};
+    start: 0,
+    end: 0,
+
+  };
 
   constructor(props) {
     super(props);
-    this.state.start=Date.now();
+    this.state.start = Date.now();
+
+
+    for (i = 0; i < 20; i++) { 
+      this.props.questions.push({ key:i, name:'test', age:99, text:'test',image: backgroundImage });
+    }
+
+
+    
+
+    console.log('%c######## Props: ', 'background: red', (this.props));
   }
 
 
   componentDidMount() {
-    this.state.end=Date.now();
-    console.log('%c######## RENDER time FlatList: ','background: red',(this.state.end-this.state.start));
-    this.state.count++;
+    this.state.end = Date.now();
+    console.log('%c######## RENDER time FlatList: ', 'background: red', (this.state.end - this.state.start));
+
   }
 
   render() {
@@ -39,7 +50,7 @@ class QuestionListView extends Component {
       />
     );
   }
-  
+
 }
 
 const styles = StyleSheet.create({
