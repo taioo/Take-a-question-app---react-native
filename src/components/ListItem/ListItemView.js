@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
 const listItem = props => (
   <View style={styles.listItem}>
-    <Image resizeMode="cover" source={props.questionImage} style={styles.questionImage} />
+
+  {props.questionImage != null ? <Image resizeMode="cover" source={props.questionImage} style={styles.questionImage} /> : <View/>}
 
     <Text style={{
     backgroundColor: '#FF003F',

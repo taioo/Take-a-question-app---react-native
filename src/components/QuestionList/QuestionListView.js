@@ -19,7 +19,7 @@ class QuestionListView extends Component {
 
 
     for (i = 0; i < 20; i++) { 
-      this.props.questions.push({ key:i, name:'test', age:99, text:'test',image: backgroundImage });
+      this.props.questions.push({ key:i, name:'test', age:99, text:'test',image: null });
     }
 
 
