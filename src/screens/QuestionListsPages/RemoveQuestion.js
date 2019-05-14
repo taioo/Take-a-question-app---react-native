@@ -30,7 +30,7 @@ class FindQuestionScreen extends Component {
       return question.key === key;
     });
     this.props.navigator.push({
-      screen: "awesome-questions.QuestionDetailScreen",
+      screen: "QuestionDetailScreen",
       title: selQuestion.name,
       passProps: {
         selectedQuestion: selQuestion

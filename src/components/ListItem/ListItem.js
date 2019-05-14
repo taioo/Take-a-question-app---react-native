@@ -21,9 +21,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   questionImage: {
-      marginRight: 8,
-      height: 30,
-      width: 30
+width: 30, height: 30, borderRadius: 30/ 2
   }
 });
 
