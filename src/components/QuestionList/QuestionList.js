@@ -13,6 +13,7 @@ const questionList = props => {
           questionName={info.item.name}
           questionAge={info.item.age}
           questionImage={info.item.image}
+          questionKey={info.item.key}
           onItemPressed={() => props.onItemSelected(info.item.key)}
         />
       )}
