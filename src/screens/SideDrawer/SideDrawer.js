@@ -19,7 +19,7 @@ class SideDrawer extends Component {
           { width: Dimensions.get("window").width * 0.8 }
         ]}
       >
-        <TouchableOpacity onPress={authLogout}>
+        <TouchableOpacity onPress={goToStart}>
           <View style={styles.drawerItem}>
             <Icon
               name={Platform.OS === "android" ? "md-log-out" : "ios-log-out"}
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
 });
 
 
-const authLogout = () =>{
+const goToStart = () =>{
   return App();
 }
 

@@ -14,7 +14,7 @@ import backgroundImage from "../../assets/background.jpg";
 import {YellowBox} from 'react-native';
 YellowBox.ignoreWarnings(['Warning: ...']);
 
-class AuthScreen extends Component {
+class StartScreen extends Component {
   state = {
     viewMode: Dimensions.get("window").height > 500 ? "portrait" : "landscape"
   };
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AuthScreen;
+export default StartScreen;

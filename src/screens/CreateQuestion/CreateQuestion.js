@@ -15,7 +15,7 @@ import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import PickImage from "../../components/PickImage/PickImage";
 import validate from "../../utility/validation";
 
-class ShareQuestionScreen extends Component {
+class CreateQuestionScreen extends Component {
   static navigatorStyle = {
     navBarButtonColor: "orange"
   };
@@ -193,4 +193,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(ShareQuestionScreen);
+export default connect(null, mapDispatchToProps)(CreateQuestionScreen);

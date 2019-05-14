@@ -11,7 +11,7 @@ const startTabs = () => {
         Navigation.startTabBasedApp({
             tabs: [
                 {
-                    screen: "awesome-questions.FindQuestionViewScreen",
+                    screen: "QuestionViewScreen",
                     label: "View Question",
                     title: "View Question",
                     icon: sources[0],
@@ -26,9 +26,9 @@ const startTabs = () => {
                     }
                 },
                 {
-                    screen: "awesome-questions.FindQuestionScreen",
-                    label: "Find Question",
-                    title: "Find Question",
+                    screen: "RemoveQuestionScreen",
+                    label: "Remove Question",
+                    title: "Remove Question",
                     icon: sources[0],
                     navigatorButtons: {
                         leftButtons: [
@@ -41,9 +41,9 @@ const startTabs = () => {
                     }
                 },
                 {
-                    screen: "awesome-questions.ShareQuestionScreen",
-                    label: "Share Question",
-                    title: "Share Question",
+                    screen: "CreateQuestionScreen",
+                    label: "Create Question",
+                    title: "Create Question",
                     icon: sources[1],
                     navigatorButtons: {
                         leftButtons: [
@@ -61,7 +61,7 @@ const startTabs = () => {
             },
             drawer: {
                 left: {
-                    screen: "awesome-questions.SideDrawer"
+                    screen: "SideDrawer"
                 }
             },
             appStyle: {

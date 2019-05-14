@@ -1,10 +1,10 @@
 import { Navigation } from "react-native-navigation";
 import { Provider } from "react-redux";
 
-import AuthScreen from "./src/screens/Auth/Auth";
-import ShareQuestionScreen from "./src/screens/ShareQuestion/ShareQuestion";
-import FindQuestionScreen from "./src/screens/FindQuestion/FindQuestion";
-import FindQuestionViewScreen from "./src/screens/FindQuestion/FindQuestionView";
+import StartScreen from "./src/screens/Start/Start";
+import CreateQuestionScreen from "./src/screens/CreateQuestion/CreateQuestion";
+import RemoveQuestionScreen from "./src/screens/QuestionListsPages/RemoveQuestion";
+import QuestionViewScreen from "./src/screens/QuestionListsPages/QuestionView";
 import QuestionDetailScreen from "./src/screens/QuestionDetail/QuestionDetail";
 import SideDrawer from "./src/screens/SideDrawer/SideDrawer";
 import configureStore from "./src/store/configureStore";
@@ -13,46 +13,46 @@ const store = configureStore();
 
 // Register Screens
 Navigation.registerComponent(
-  "awesome-questions.AuthScreen",
-  () => AuthScreen,
+  "awesome-questions.StartScreen",
+  () => StartScreen,
   store,
   Provider
 );
 Navigation.registerComponent(
-  "awesome-questions.ShareQuestionScreen",
-  () => ShareQuestionScreen,
+  "CreateQuestionScreen",
+  () => CreateQuestionScreen,
   store,
   Provider
 );
 Navigation.registerComponent(
-  "awesome-questions.FindQuestionScreen",
-  () => FindQuestionScreen,
-  store,
-  Provider
-);
-
-Navigation.registerComponent(
-  "awesome-questions.FindQuestionViewScreen",
-  () => FindQuestionViewScreen,
+  "RemoveQuestionScreen",
+  () => RemoveQuestionScreen,
   store,
   Provider
 );
 
 Navigation.registerComponent(
-  "awesome-questions.QuestionDetailScreen",
+  "QuestionViewScreen",
+  () => QuestionViewScreen,
+  store,
+  Provider
+);
+
+Navigation.registerComponent(
+  "QuestionDetailScreen",
   () => QuestionDetailScreen,
   store,
   Provider
 );
 Navigation.registerComponent(
-  "awesome-questions.SideDrawer",
+  "SideDrawer",
   () => SideDrawer
 );
 
 // Start a App
 export default () => Navigation.startSingleScreenApp({
   screen: {
-    screen: "awesome-questions.AuthScreen",
-    title: "Login"
+    screen: "awesome-questions.StartScreen",
+    title: "Start"
   }
 });
