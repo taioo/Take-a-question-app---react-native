@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Navigation } from "react-native-navigation";
 import {
   View,
   Text,
@@ -8,9 +9,19 @@ import {
   Platform
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import App from "../../../App"
 
 class SideDrawer extends Component {
+
+  goToStart = () => {
+
+    Navigation.startSingleScreenApp({
+      screen: {
+        screen: "StartScreen",
+        title: "Start"
+      }
+    });
+  }
+
   render() {
     return (
       <View
@@ -19,7 +30,7 @@ class SideDrawer extends Component {
           { width: Dimensions.get("window").width * 0.8 }
         ]}
       >
-        <TouchableOpacity onPress={goToStart}>
+        <TouchableOpacity onPress={this.goToStart}>
           <View style={styles.drawerItem}>
             <Icon
               name={Platform.OS === "android" ? "md-log-out" : "ios-log-out"}
@@ -53,8 +64,6 @@ const styles = StyleSheet.create({
 });
 
 
-const goToStart = () =>{
-  return App();
-}
+
 
 export default SideDrawer;

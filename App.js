@@ -13,7 +13,7 @@ const store = configureStore();
 
 // Register Screens
 Navigation.registerComponent(
-  "awesome-questions.StartScreen",
+  "StartScreen",
   () => StartScreen,
   store,
   Provider
@@ -52,7 +52,7 @@ Navigation.registerComponent(
 // Start a App
 export default () => Navigation.startSingleScreenApp({
   screen: {
-    screen: "awesome-questions.StartScreen",
+    screen: "StartScreen",
     title: "Start"
   }
 });

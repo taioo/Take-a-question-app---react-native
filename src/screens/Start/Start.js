@@ -33,7 +33,7 @@ class StartScreen extends Component {
         <View style={styles.container}>
           <HeadingText>Please Log In</HeadingText>
           <ButtonWithBackground color="#29aaf4" onPress={(this.loginHandler)}>
-            Login
+            Start
           </ButtonWithBackground>
         </View>
       </ImageBackground>

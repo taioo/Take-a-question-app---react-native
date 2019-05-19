@@ -5,7 +5,7 @@ import {
 import { connect } from "react-redux";
 import QuestionList from "../../components/QuestionList/QuestionList";
 
-class FindQuestionScreen extends Component {
+class RemoveQuestionScreen extends Component {
   static navigatorStyle = {
     navBarButtonColor: "orange"
   };
@@ -56,4 +56,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(FindQuestionScreen);
+export default connect(mapStateToProps)(RemoveQuestionScreen);

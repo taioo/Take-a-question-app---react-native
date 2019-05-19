@@ -18,9 +18,9 @@ class QuestionListView extends Component {
     this.state.start = Date.now();
 
 
-    for (i = 0; i < 20; i++) { 
-      this.props.questions.push({ key:i, name:'test', age:99, text:'test',image: null });
-    }
+    // for (i = 0; i < 20; i++) { 
+    //   this.props.questions.push({ key:i, name:'test', age:99, text:'test',image: null });
+    // }
 
 
     

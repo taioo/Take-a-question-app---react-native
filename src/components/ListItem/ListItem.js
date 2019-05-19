@@ -34,18 +34,8 @@ class listItem extends Component {
               </View>
             </TouchableOpacity>
         </View>
-  
     );
   }
-
-
-
-
-
-
-
-
-
 }
 
 const styles = StyleSheet.create({
