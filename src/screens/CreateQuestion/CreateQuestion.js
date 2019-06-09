@@ -134,9 +134,6 @@ class CreateQuestionScreen extends Component {
           <MainText>
             <HeadingText>Create a Question</HeadingText>
           </MainText>
-          <PickImage onImagePicked={this.imagePickedHandler} />
-
-
           <Text style={{ color: 'black' }}>
             name:
           </Text>
@@ -146,20 +143,23 @@ class CreateQuestionScreen extends Component {
             onChangeText={this.questionNameChangedHandler}
           />
           <Text style={{ color: 'black' }}>
-            Age:
-          </Text>
-          <QuestionInput
-            questionData={this.state.controls.questionAge}
-            onChangeText={this.questionAgeChangedHandler}
-          />
-          <Text style={{ color: 'black' }}>
             Question:
           </Text>
           <QuestionInput
             questionData={this.state.controls.questionText}
             onChangeText={this.questionTextChangedHandler}
           />
-          <View style={styles.button}>
+          <Text style={{ color: 'black' }}>
+            Age:
+          </Text>
+          <QuestionInput
+            questionData={this.state.controls.questionAge}
+            onChangeText={this.questionAgeChangedHandler}
+          />
+
+          <PickImage onImagePicked={this.imagePickedHandler} />
+
+          <View style={styles.container}>
             <Button
               title="create question"
               onPress={this.questionAddedHandler}
@@ -179,11 +179,12 @@ class CreateQuestionScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center"
+    flex: 10,
+    alignItems: "center",
+    margin: 10
   },
   button: {
-    margin: 8
+    margin: 10
   }
 });
 

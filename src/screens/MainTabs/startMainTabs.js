@@ -11,10 +11,10 @@ const startTabs = () => {
         Navigation.startTabBasedApp({
             tabs: [
                 {
-                    screen: "QuestionViewScreen",
-                    label: "View Question",
-                    title: "View Question",
-                    icon: sources[0],
+                    screen: "CreateQuestionScreen",
+                    label: "Create Question",
+                    title: "Create Question",
+                    icon: sources[1],
                     navigatorButtons: {
                         leftButtons: [
                             {
@@ -41,10 +41,10 @@ const startTabs = () => {
                     }
                 },
                 {
-                    screen: "CreateQuestionScreen",
-                    label: "Create Question",
-                    title: "Create Question",
-                    icon: sources[1],
+                    screen: "QuestionViewScreen",
+                    label: "View Question",
+                    title: "View Question",
+                    icon: sources[0],
                     navigatorButtons: {
                         leftButtons: [
                             {
@@ -54,7 +54,7 @@ const startTabs = () => {
                             }
                         ]
                     }
-                }
+                },
             ],
             tabsStyle: {
                 tabBarSelectedButtonColor: "orange"

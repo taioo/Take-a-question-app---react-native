@@ -7,15 +7,11 @@ import backgroundImage from "../../assets/background.jpg";
 class QuestionListView extends Component {
 
 
-  state = {
-    start: 0,
-    end: 0,
-
-  };
+time;
 
   constructor(props) {
     super(props);
-    this.state.start = Date.now();
+    time = Date.now();
 
 
     // for (i = 0; i < 20; i++) { 
@@ -30,9 +26,7 @@ class QuestionListView extends Component {
 
 
   componentDidMount() {
-    this.state.end = Date.now();
-    console.log('%c######## RENDER time FlatList: ', 'background: red', (this.state.end - this.state.start));
-
+    console.log(Date.now() - time);
   }
 
   render() {

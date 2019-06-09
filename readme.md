@@ -36,5 +36,8 @@ emulator -avd Pixel_2_Edited_API_28
 ## run
 ```
 react-native run-ios
+react-native run-ios --simulator="iPad (6th generation)"
+react-native run-ios --device "M-iPad"
+react-native run-ios --configuration Release   --device "M-iPad"
 ```
 

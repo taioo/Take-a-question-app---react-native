@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Platform, View, Image, Button, StyleSheet } from "react-native";
+import { Platform, View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import ImagePicker from "react-native-image-picker";
+import Icon from "react-native-vector-icons/Ionicons";
 
 class PickImage extends Component {
   state = {
@@ -22,13 +23,13 @@ class PickImage extends Component {
       } else if (res.error) {
         console.log("Error", res.error);
       } else {
-        start = Date.now();
+        time = Date.now();
         this.setState({
           pickedImaged: { uri: res.uri },
         });
         this.props.onImagePicked({ uri: res.uri, base64: res.data });
-        end = Date.now();
-        console.log('%c######## LOAD time PickImg: ', 'background: red', (end - start));
+
+        console.log(Date.now() - time);
       }
     });
   }
@@ -39,10 +40,23 @@ class PickImage extends Component {
         <View style={styles.questionholder}>
           <Image source={this.state.pickedImaged} style={styles.previewImage} />
         </View>
-        <View style={styles.button}>
-          <Button title="Choose Image" onPress={this.pickImageHandler} />
-        </View>
+
+        <TouchableOpacity onPress={this.pickImageHandler} style={styles.button}>
+
+
+
+
+
+          <Text style={{ color: 'orange' }}>
+
+            <Icon
+              size={30}
+              name={Platform.OS === "android" ? "md-camera" : "ios-camera"}
+              color="orange"
+            /> Add Image</Text>
+        </TouchableOpacity>
       </View>
+
     );
   }
 }
@@ -71,7 +85,13 @@ const styles = StyleSheet.create({
     }),
   },
   button: {
-    margin: 8
+    borderWidth: 3,
+    borderColor: "orange",
+    margin: 10,
+    alignSelf: "center",
+    alignItems: "center",
+    paddingHorizontal: 60,
+    paddingVertical: 10,
   },
   previewImage: {
 

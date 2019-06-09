@@ -6,15 +6,12 @@ import {
   StyleSheet
 } from "react-native";
 
-
 class ButtonWithBackground extends Component {
 
 
-  state = {
     
-    start:'0',
-    end:'0'
-};
+  time;
+
 
 
 
@@ -22,13 +19,12 @@ class ButtonWithBackground extends Component {
 
   constructor(props) {
     super(props);
-    this.state.start=Date.now();
+    time=Date.now();
   }
 
 
   componentDidMount() {
-    this.state.end=Date.now();
-    console.log('%c######## RENDER time ButtonWithBackground:','background: red',(this.state.end-this.state.start));
+    console.log(Date.now() - time);
   }
 
 

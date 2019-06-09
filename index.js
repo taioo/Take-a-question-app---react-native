@@ -9,9 +9,10 @@ YellowBox.ignoreWarnings(['Warning: ...']);
 const store = configureStore();
 
 export default class RNRedux extends React.Component {
+
     constructor(props) {
         super(props)
-        console.log(Date.now())
+
     }
 
     render() {
@@ -20,6 +21,8 @@ export default class RNRedux extends React.Component {
                 <App />
             </Provider>);
     }
+
+
 }
 
 // const RNRedux = () => (

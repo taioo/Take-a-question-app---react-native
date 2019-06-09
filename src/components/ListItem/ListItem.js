@@ -21,10 +21,9 @@ class listItem extends Component {
 
         <View style={styles.listItem}>
           <Image resizeMode="cover" source={this.props.questionImage} style={styles.questionImage} />
-          <Text>    </Text>
           <Text>{this.props.questionName}</Text>
           <Text>                                                                                </Text>
-          <TouchableOpacity onPress={this.questionDeletedHandler}>
+          <TouchableOpacity onPress={this.questionDeletedHandler} style={{position: 'absolute' , right: 10}}>
               <View style={styles.deleteButton}>
                 <Icon
                   size={30}

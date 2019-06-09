@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   questionImage: {
     height: 300,
-    width: 300,
+    width: 500,
     alignItems: "center"
   },
 });

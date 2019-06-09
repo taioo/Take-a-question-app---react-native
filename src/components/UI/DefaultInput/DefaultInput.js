@@ -3,12 +3,7 @@ import { TextInput, StyleSheet } from "react-native";
 
 class DefaultInput extends Component {
 
-
-  state = {
-    
-    start:'0',
-    end:'0'
-};
+time
 
 
 
@@ -16,13 +11,13 @@ class DefaultInput extends Component {
 
   constructor(props) {
     super(props);
-    this.state.start=Date.now();
+    time=Date.now();
   }
 
 
   componentDidMount() {
-    this.state.end=Date.now();
-    console.log('%c######## RENDER time DefaultInput: ','background: red',(this.state.end-this.state.start));
+
+    console.log(Date.now() - time);
   }
 
 

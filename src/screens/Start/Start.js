@@ -31,7 +31,6 @@ class StartScreen extends Component {
     return (
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
         <View style={styles.container}>
-          <HeadingText>Please Log In</HeadingText>
           <ButtonWithBackground color="#29aaf4" onPress={(this.loginHandler)}>
             Start
           </ButtonWithBackground>
