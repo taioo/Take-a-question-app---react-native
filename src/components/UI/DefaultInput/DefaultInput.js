@@ -3,25 +3,15 @@ import { TextInput, StyleSheet } from "react-native";
 
 class DefaultInput extends Component {
 
-time
-
-
-
-
 
   constructor(props) {
     super(props);
-    time=Date.now();
+    time = Date.now();
   }
-
 
   componentDidMount() {
-
     console.log(Date.now() - time);
   }
-
-
-
 
   render() {
     return (

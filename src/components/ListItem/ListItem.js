@@ -20,9 +20,9 @@ class listItem extends Component {
     return (
 
         <View style={styles.listItem}>
+          {this.props.questionImage === null ? <View style={styles.circle} /> : <Image resizeMode="cover" source={this.props.questionImage} style={styles.questionImage} /> }
           <Image resizeMode="cover" source={this.props.questionImage} style={styles.questionImage} />
           <Text>{this.props.questionName}</Text>
-          <Text>                                                                                </Text>
           <TouchableOpacity onPress={this.questionDeletedHandler} style={{position: 'absolute' , right: 10}}>
               <View style={styles.deleteButton}>
                 <Icon
@@ -48,7 +48,13 @@ const styles = StyleSheet.create({
   },
   questionImage: {
     width: 30, height: 30, borderRadius: 30 / 2
-  }
+  },
+  circle: {
+    width: 30,
+    height: 30,
+    borderRadius: 100/2,
+    backgroundColor: "orange"
+}
 });
 
 const mapDispatchToProps = dispatch => {

@@ -50,7 +50,7 @@ class ButtonWithBackground extends Component {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: 'blue',
-    borderWidth: 1,
+    borderWidth: 0,
     borderColor: 'blue',
     borderRadius: 12,
     padding: 8,
