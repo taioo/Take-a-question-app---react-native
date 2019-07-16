@@ -7,17 +7,17 @@ class questionList extends Component {
 
   constructor(props) {
     super(props);
-     for (i = 0; i < 1000; i++) { 
-      this.props.questions.push({ key:i, name:'test', age:99, text:'test',image: null });
-     }
+    //  for (i = 0; i < 1000; i++) { 
+    //   this.props.questions.push({ key:i, name:'test', age:99, text:'test',image: null });
+    //  }
 
-    time = Date.now();
+    // time = Date.now();
   }
 
 
-  componentDidMount() {
-    console.log(Date.now() - time);
-  }
+  // componentDidMount() {
+  //   console.log(Date.now() - time);
+  // }
 
 
   render() {

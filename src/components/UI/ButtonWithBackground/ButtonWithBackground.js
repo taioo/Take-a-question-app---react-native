@@ -10,7 +10,7 @@ class ButtonWithBackground extends Component {
 
 
     
-  time;
+  // time;
 
 
 
@@ -19,13 +19,13 @@ class ButtonWithBackground extends Component {
 
   constructor(props) {
     super(props);
-    time=Date.now();
+    // time=Date.now();
   }
 
 
-  componentDidMount() {
-    console.log(Date.now() - time);
-  }
+  // componentDidMount() {
+  //   console.log(Date.now() - time);
+  // }
 
 
 

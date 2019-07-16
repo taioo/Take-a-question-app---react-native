@@ -23,13 +23,13 @@ class PickImage extends Component {
       } else if (res.error) {
         console.log("Error", res.error);
       } else {
-        time = Date.now();
+        // time = Date.now();
         this.setState({
           pickedImaged: { uri: res.uri },
         });
         this.props.onImagePicked({ uri: res.uri, base64: res.data });
 
-        console.log(Date.now() - time);
+        // console.log(Date.now() - time);
       }
     });
   }
