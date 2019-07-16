@@ -54,17 +54,46 @@ Screenshots
  <tr>
     <td>
     <img src="screenshot/ios/1.png" width="500" />
-    <img src="screenshot/ios/2.png" width="500" />
-    <img src="screenshot/ios/3.png" width="500" />
-    <img src="screenshot/ios/4.png" width="500" />
-    <img src="screenshot/ios/5.png" width="500" />
     </td>
     <td>
     <img src="screenshot/android/1.png" width="500" />
+    </td>
+ </tr>
+
+   <tr>
+    <td>
+    <img src="screenshot/ios/2.png" width="500" />
+    </td>
+    <td>
     <img src="screenshot/android/2.png" width="500" />
+    </td>
+ </tr>
+
+  <tr>
+    <td>
+    <img src="screenshot/ios/3.png" width="500" />
+    </td>
+    <td>
     <img src="screenshot/android/4.png" width="500" />
+    </td>
+ </tr>
+
+  <tr>
+    <td>
+    <img src="screenshot/ios/4.png" width="500" />
+    </td>
+    <td>
     <img src="screenshot/android/5.png" width="500" />
+    </td>
+ </tr>
+
+  <tr>
+    <td>
+    <img src="screenshot/ios/5.png" width="500" />
+    </td>
+    <td>
     <img src="screenshot/android/6.png" width="500" />
     </td>
  </tr>
+
 </table>
