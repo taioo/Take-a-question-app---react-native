@@ -1,4 +1,8 @@
-(setq markdown-css-paths '("readme.css"))
+
+This is a mobile application developt with React-Native. This app is intended for TV or Radio broadcast to save questions from the Pulicum and to answer all of them later. Without disturbing the television program.
+
+
+
 # IOS simulator
 ## to run
 ```
