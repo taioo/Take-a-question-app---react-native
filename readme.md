@@ -3,41 +3,16 @@ This is a mobile application developt with React-Native. This app is intended fo
 
 
 
-# IOS simulator
-## to run
-```
-react-native run-ios
-```
-## only to open ios simulator 
+## run in iOS
+open simulator
 ```
 open -a Simulator
 ```
-
-
-
-# Android emulator
-## save in bash profile
+run
 ```
-open ~/.bash_profile     
+react-native run-ios
 ```
-### copy all and paste in bash profile
-```
-## Android emulator
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-```
-## List all avd
-```
-emulator -list-avds
-```
-## open example
-```
-emulator -avd Pixel_2_Edited_API_28
-```
-## run
+some run examples
 ```
 react-native run-ios
 react-native run-ios --simulator="iPad (6th generation)"
@@ -46,6 +21,12 @@ react-native run-ios --configuration Release   --device "my-iPad"
 ```
 
 
+
+
+## Run in Android
+```
+react-native run-android
+```
 
 Screenshots 
 
