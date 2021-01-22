@@ -3,7 +3,7 @@ This is a mobile application developt with React-Native. This app is intended fo
 
 
 
-## run in iOS
+### Run in iOS
 open simulator
 ```
 open -a Simulator
@@ -23,12 +23,15 @@ react-native run-ios --configuration Release   --device "my-iPad"
 
 
 
-## Run in Android
+### Run in Android
 ```
 react-native run-android
 ```
+<br>
+<br>
+<br>
 
-Screenshots 
+## Screenshots 
 
 <table border="0">
  <tr>
